@@ -7,6 +7,7 @@ import { Center, Container, HStack, Spinner, Text } from "@chakra-ui/react";
 import { useShallow } from "zustand/react/shallow";
 import CityForm from "./CityForm";
 import MainWeatherPanel from "./MainWeatherPanel";
+import { JSX, Key } from "react";
 
 
 function MainContainer() {
@@ -39,12 +40,12 @@ function MainContainer() {
                     <HStack h='fit-content' alignItems='flex-start' justifyContent="center">
                         {width > 1024 ? (
                             <>
-                                {data?.full.map((el, index) => <MainWeatherPanel {...el} key={index} />)}
+                                {data?.full.map((el: JSX.IntrinsicAttributes & { city: string; time: string; icon: string; temperature: string; humidity: string; wind: string; }, index: Key | null | undefined) => <MainWeatherPanel {...el} key={index} />)}
                             </>
                         ) : (
                             (width < 1023 && width > 600) ?
                                 <>
-                                    {data?.short.map((el, index) => <MainWeatherPanel {...el} key={index} />)}
+                                    {data?.short.map((el: JSX.IntrinsicAttributes & { city: string; time: string; icon: string; temperature: string; humidity: string; wind: string; }, index: Key | null | undefined) => <MainWeatherPanel {...el} key={index} />)}
                                 </>
                                 :
                                 (<MainWeatherPanel {...data?.current} />)

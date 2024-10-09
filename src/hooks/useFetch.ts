@@ -3,12 +3,12 @@ import moment from "moment";
 import { useEffect, useState } from "react";
 
 export default function useFetch(city: string) {
-  const [data, setData] = useState<unknown | null>(null);
-  const [error, setError] = useState<unknown | null>(null);
+  const [data, setData] = useState<any>(null);
+  const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
 
   // method to update weather data
-  const updateData = (data) => {
+  const updateData = (data: any) => {
     const full = [];
     for (let i = 0; i < data.list.length; i++) {
       if (moment(data.list[i].dt_txt).isSame(new Date(), "day")) {
