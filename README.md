@@ -18,4 +18,4 @@ Next, you could open the application in the browser.
 **Application** 
 This application is used to get the weather forecast for the city entered by the user. To get the weather forecast data, you need to enter the name of the city in the form. The api.openweathermap.org service is used. Below this form, the weather forecast for this city until the end of the current day (by the hour) will appear. Changing the browser screen size will reduce the number of hourly forecasts displayed on the screen. The application used the chakra-ui, zustand, moment libraries.
 
-Live demo - https://cats-dogs-breed-explorer.vercel.app/
+Live demo - https://weather-next-new.vercel.app/
